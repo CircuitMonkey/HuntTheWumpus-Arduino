@@ -1,15 +1,12 @@
-# HuntTheWumpus-Arduino
-A version of Hunt The Wumpus for Arduino
+# Solstice HaLo Module - HuntTheWumpus Game
+A version of Hunt The Wumpus for Solstice as an add-on module.
 
-This project was made with an Arduino Mega 2560.
+This project was made with an Solstice StarFire.
+
 Used components:
-1x MAX7219 8x8 Matrix Display module
-1x Green LED
-1x Blue LED
+1x Equinox Sprite 8x8 RGB Module
 1x Passive Peizo Speaker
 1x Joystick Module
-3x 220 Ohm resistors
-Lots of wire
 
 On startup, the game will generate an 8x8 map for the player that contains bats, pits, and a Wumpus. The player must pay attention to their senses to ensure they don't fall into a pit or run into a Wumpus. Running into a bat might not be instant death, but they can carry you over a pit or even straight to the Wumpus.
 
