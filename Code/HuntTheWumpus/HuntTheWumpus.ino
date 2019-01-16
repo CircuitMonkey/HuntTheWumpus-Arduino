@@ -166,8 +166,8 @@ const byte pinDIN = 7;
 //const byte pinCS = 6;
 //const byte pinCLK = 5;
 const byte maxInUse = 1;
-//MaxMatrix m(pinDIN, pinCS, pinCLK, maxInUse); 
-Sprite8x8 m(pinDIN); 
+//MaxMatrix m(pinDIN, pinCS, pinCLK, maxInUse);
+Sprite8x8 m(pinDIN);
 
 //JoyStick
 const byte pinY = A9;
@@ -246,13 +246,13 @@ void loop() {
         lastMove = 0;
       }
     }
-    //Move Player right 
+    //Move Player right
     else if(dir == 1){
       if(playerX<7){
         playerX++;
         lastMove = 1;
       }
-    } 
+    }
     //Move Player down
     else if(dir == 2){
       if(playerY>0){
@@ -268,7 +268,7 @@ void loop() {
       }
     }
     visited[playerX][playerY] = 1;
-    
+
   } else {
     //Joystick in deadzone
     if(!digitalRead(pinButton)){
@@ -283,7 +283,7 @@ void loop() {
           }
         }
       }
-      //Shoot arrow right 
+      //Shoot arrow right
       else if(lastMove == 1){
         if(playerX<7){
           if(hazards[playerX+1][playerY]=='w'){
@@ -292,7 +292,7 @@ void loop() {
             miss();
           }
         }
-      } 
+      }
       //Shoot arrow down
       else if(lastMove == 2){
         if(playerY>0){
@@ -371,7 +371,7 @@ void introTheme(){
   //G3
   tone(pinSpeaker,196,400);
   delay(400);
-  
+
   //D3
   tone(pinSpeaker,147,200);
   delay(200);
@@ -425,8 +425,8 @@ void printCharWithShift(char c, int shift_speed){
   memcpy_P(buffer, CH + 7*c, 7);
   m.writeSprite(maxInUse*8, 0, buffer);
   m.setColumn(maxInUse*8 + buffer[0], 0);
-  
-  for (int i = 0; i < buffer[0]+1; i++) 
+
+  for (int i = 0; i < buffer[0]+1; i++)
   {
     delay(shift_speed);
     m.shiftLeft(false, false);
